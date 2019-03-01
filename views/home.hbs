@@ -6,9 +6,9 @@
 
         <div class="project-card-container">
         {{#each projects}}
-            <div class="project-card--item">
+            <div class="project-card--item " data-id={{id}}>
 
-                <img src={{imageSource}} alt={{id}} name={{id}} class="project-card--image">
+                <img src={{imageSource}} alt={{id}} class="project-card--image">
                 <div class="project-card--title">{{name}}</div>
 
             </div>

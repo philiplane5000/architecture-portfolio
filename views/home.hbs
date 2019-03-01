@@ -4,16 +4,16 @@
 
     <section class="content-container">
 
+        <div class="project-card-container">
         {{#each projects}}
-        <div class="project-card--container">
             <div class="project-card--item">
-                <a href="#">
-                    <img src={{imageSource}} alt={{id}} width="450" height="300">
-                </a>
+
+                <img src={{imageSource}} alt={{id}} name={{id}} class="project-card--image">
                 <div class="project-card--title">{{name}}</div>
+                
             </div>
-        </div>
         {{/each}}
+        </div>
 
     </section>
 

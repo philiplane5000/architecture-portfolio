@@ -143,6 +143,7 @@ footer {
   width: 85%;
   margin: 0 auto;
   height: 90px;
+  padding-top: 15px;
   border-top: 1px solid lightslategray;
 }
 footer span, footer i {

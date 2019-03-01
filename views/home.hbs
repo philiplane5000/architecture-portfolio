@@ -1,0 +1,22 @@
+{{> nav }}
+
+<main>
+
+    <section class="content-container">
+
+        {{#each projects}}
+        <div class="project-card--container">
+            <div class="project-card--item">
+                <a href="#">
+                    <img src={{imageSource}} alt={{id}} width="450" height="300">
+                </a>
+                <div class="project-card--title">{{name}}</div>
+            </div>
+        </div>
+        {{/each}}
+
+    </section>
+
+</main>
+
+{{!-- {{> footer}} --}}

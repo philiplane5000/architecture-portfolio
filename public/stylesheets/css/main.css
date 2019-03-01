@@ -1,0 +1,105 @@
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(245, 245, 245, 0.5);
+}
+
+header {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  margin: 80px 40px 60px 40px;
+  padding-bottom: 20px;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 2px solid #333;
+}
+header #main-header {
+  font-size: 4em;
+}
+header #navbar {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+header #navbar .navlink {
+  margin: 0 15px;
+  font-size: 2em;
+}
+header #navbar .navlink a {
+  color: #414141;
+  text-decoration: none;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+header #navbar .navlink a:visited {
+  color: #414141;
+  border: 2px solid green;
+}
+header #navbar .navlink a:focus, header #navbar .navlink a:hover {
+  opacity: 1;
+  color: #ff1932;
+  transition: all 0.5s ease-in;
+}
+
+main .content-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px 40px;
+  margin-bottom: 20px;
+}
+main .project-card--container {
+  display: flex;
+  margin: 20px;
+}
+main .project-card--container .project-card--item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+main .project-card--container .project-card--title {
+  margin-top: 10px;
+  font-family: "Source Serif Pro", serif;
+  font-size: 14px;
+}
+main .about-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+main .about-container img {
+  border-radius: 50%;
+}
+main .about-container div {
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  max-width: 550px;
+  line-height: 1.4em;
+  font-size: 1.2em;
+  font-family: "Source Serif Pro", serif;
+  font-size: 1.2rem;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  width: 85%;
+  margin: 0 auto;
+  height: 90px;
+  border-top: 1px solid lightslategray;
+}
+footer span, footer i {
+  padding: 20px;
+  font-size: 12px;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -3,17 +3,21 @@ var router = express.Router();
 var projectsController = require('../controllers/projectController');
 let projects = require('./mock-data/projects');
 
-/* GET home page. */
+/* RENDER HOME PAGE WITH ALL PROJECTS DATA. */
 router.get('/', projectsController.renderProjectsPage);
 
+/* RENDER HOME PAGE WITH ALL PROJECTS DATA. */
 router.get('/projects', projectsController.renderProjectsPage);
 
-router.get('/about', function(req, res, next) {
-  res.render('about', projects);
+/* RENDER SINGLE PROJECT PAGE BY ID */
+router.get('/project/:id', projectsController.renderProjectById);
+
+router.get('/about', function(req, res) {
+  res.render('about');
 });
 
-router.get('/contact', function(req, res, next) {
-  res.render('contact', projects);
+router.get('/contact', function(req, res) {
+  res.render('contact');
 });
 
 module.exports = router;

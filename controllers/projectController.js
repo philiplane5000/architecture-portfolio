@@ -5,13 +5,30 @@ module.exports = {
         db.Project
             .find()
             .then(projects => {
-
-                console.log(projects[0].imageSrc)
-                // console.log(projects.about);
                 res.render('home', {projects: projects})
             })
             .catch(err => {
-                console.log(err)
+                res.json(err)
             })
-    }
+    },
+    renderProjectById: (req, res) => {
+        db.Project
+            .findById(req.params.id)
+            .then(project => {
+                // res.json(project)
+                res.render('project', {project: project})
+            })
+            .catch(err => {
+                res.json(err)
+            })
+    },
+    createProject: (req, res) => {
+        db.Project.create(req.body)
+          .then(doc => {
+            res.json(doc);
+          })
+          .catch(err => {
+            res.json(err);
+          })
+      }
 }

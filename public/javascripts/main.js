@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
     }
 
     function getProject() {
-            let name = (this).getAttribute('data-id');
-            axios.get(`/projects/${name}`)
+            let _id = (this).getAttribute('data-id');
+            axios.get(`/project/${_id}`)
                 .then(response => { /* call to render function */
                     console.log(response);
                 })

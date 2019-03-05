@@ -208,6 +208,16 @@ main {
 
         }
     }
+    .form-container {
+        width: 250px;
+        #newProjectForm {
+            display: flex;
+            flex-direction: column;
+            input, label {
+                padding: 10px;
+            }
+        }
+    }
 }
 
 footer {

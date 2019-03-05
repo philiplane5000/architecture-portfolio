@@ -202,6 +202,16 @@ main .project-container .project-desc .project-desc--about p {
   font-family: "Source Serif Pro", serif;
   font-size: 1.4em;
 }
+main .form-container {
+  width: 250px;
+}
+main .form-container #newProjectForm {
+  display: flex;
+  flex-direction: column;
+}
+main .form-container #newProjectForm input, main .form-container #newProjectForm label {
+  padding: 10px;
+}
 
 footer {
   display: flex;

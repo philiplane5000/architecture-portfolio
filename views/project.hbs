@@ -4,8 +4,24 @@
 
     <section class="content-container">
 
-        <h2>{{project.name}}</h2>
-        <img src={{project.imageSrc}} alt={{project.id}}>
+        <div class="project-container">
+
+            <section class="project-media">
+                <img src={{project.imageSrc}} alt={{project.id}}>
+            </section>
+
+            <section class="project-desc">
+                <h2 class="project-desc--name">{{project.name}}</h2>
+
+                <div class="project-desc--about">
+                    {{#each project.about}}
+                    <p>{{this}}</p>
+                    {{/each}}
+                </div>
+
+            </section>
+
+        </div>
 
     </section>
 

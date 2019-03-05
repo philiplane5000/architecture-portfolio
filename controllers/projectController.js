@@ -21,14 +21,5 @@ module.exports = {
             .catch(err => {
                 res.json(err)
             })
-    },
-    createProject: (req, res) => {
-        db.Project.create(req.body)
-          .then(doc => {
-            res.json(doc);
-          })
-          .catch(err => {
-            res.json(err);
-          })
-      }
+    }
 }

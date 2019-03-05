@@ -5,6 +5,16 @@ html {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+@media (max-width: 768px) {
+  html {
+    font-size: 9.85px;
+  }
+}
+@media (max-width: 480px) {
+  html {
+    font-size: 9.675px;
+  }
+}
 
 body {
   background-color: rgba(245, 245, 245, 0.5);
@@ -53,39 +63,45 @@ main .content-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 20px 40px;
-  margin-bottom: 20px;
+  padding: 20px 60px;
+  margin-bottom: 40px;
 }
-main .project-card-container {
+main .project-cards-container {
+  /* projects page styles */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-main .project-card-container .project-card--item {
+main .project-cards-container .project-card--item {
   display: flex;
   margin: 20px;
-  max-width: 275px;
+  max-width: 350px;
   flex-direction: column;
   justify-content: center;
 }
-main .project-card-container .project-card--title {
+main .project-cards-container .project-card--link {
+  text-decoration: none;
+  text-align: center;
+}
+main .project-cards-container .project-card--title {
   margin-top: 10px;
   font-family: "Source Serif Pro", serif;
-  font-size: 14px;
+  font-size: 1.6em;
 }
-main .project-card-container .project-card--image {
+main .project-cards-container .project-card--image {
   max-width: 100%;
   height: auto;
 }
 main .about-container {
+  /* about page styles */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   padding: 0 40px;
 }
 main .about-container .profile-pic-container {
-  display: flex;
   flex: 0.35;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -111,7 +127,7 @@ main .about-container .about-body .about-body--header {
 }
 main .about-container .about-body .about-body--header h3 {
   display: inline;
-  font-size: 2em;
+  font-size: 2.4em;
   line-height: 1.6em;
   letter-spacing: 2px;
 }
@@ -132,9 +148,59 @@ main .about-container .about-body .about-body--header h3:after {
 main .about-container .about-body .about-body--text {
   padding: 20px;
   line-height: 1.5em;
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-family: "Source Serif Pro", serif;
-  font-size: 1.2rem;
+}
+main .project-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 1405px;
+}
+main .project-container .project-media {
+  flex: 0.58;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .project-container .project-media img {
+  max-width: 600px;
+}
+@media (max-width: 768px) {
+  main .project-container .project-media img {
+    max-width: 450px;
+  }
+}
+@media (max-width: 480px) {
+  main .project-container .project-media img {
+    max-width: 300px;
+  }
+}
+main .project-container .project-desc {
+  flex: 0.42;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  min-width: 450px;
+  margin: 0 40px;
+}
+@media (max-width: 1266px) {
+  main .project-container .project-desc {
+    flex: 0.925;
+    text-align: center;
+  }
+}
+main .project-container .project-desc .project-desc--name {
+  font-size: 2.2em;
+  margin: 30px auto;
+}
+main .project-container .project-desc .project-desc--about p {
+  padding: 0 10px 20px 10px;
+  line-height: 1.5em;
+  font-family: "Source Serif Pro", serif;
+  font-size: 1.4em;
 }
 
 footer {

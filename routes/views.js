@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var projectsController = require('../controllers/projectController');
-let projects = require('./mock-data/projects');
 
 /* RENDER HOME PAGE WITH ALL PROJECTS DATA. */
 router.get('/', projectsController.renderProjectsPage);

@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
     const image02 = document.querySelector("[name='image02']");
     const about01 = document.querySelector("[name='about01']");
     const about02 = document.querySelector("[name='about02']");
-
     const submitBtn = document.querySelector("#submitNewProject");
 
     submitBtn.addEventListener('click', function(e){

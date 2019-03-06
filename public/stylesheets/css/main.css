@@ -18,42 +18,61 @@ html {
 
 body {
   background-color: rgba(245, 245, 245, 0.5);
+  min-width: 320px;
 }
 
 header {
   font-family: "Open Sans", sans-serif;
   display: flex;
-  margin: 80px 40px 60px 40px;
+  margin: 80px 40px 60px;
   padding-bottom: 20px;
   justify-content: space-between;
   align-items: baseline;
   border-bottom: 2px solid #333;
 }
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 header #main-header {
   font-size: 4em;
 }
-header #navbar {
+@media (max-width: 768px) {
+  header #main-header {
+    font-size: 3.2em;
+    margin-bottom: 10px;
+  }
+}
+header nav .navbar {
   display: flex;
   justify-content: space-between;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-header #navbar .navlink {
+header nav .navbar .navlink {
   margin: 0 15px;
-  font-size: 2em;
+  font-size: 1.8em;
 }
-header #navbar .navlink a {
+header nav .navbar .navlink a {
   color: #414141;
   text-decoration: none;
   text-transform: uppercase;
   opacity: 0.75;
 }
-header #navbar .navlink a:visited {
+@media (max-width: 768px) {
+  header nav .navbar .navlink a {
+    font-size: 1.4rem;
+  }
+}
+header nav .navbar .navlink a:visited {
   color: #414141;
   border: 2px solid green;
 }
-header #navbar .navlink a:focus, header #navbar .navlink a:hover {
+header nav .navbar .navlink a:focus, header nav .navbar .navlink a:hover {
   opacity: 1;
   color: #ff1932;
   transition: all 0.25s ease-in;
@@ -75,13 +94,19 @@ main .project-cards-container {
 main .project-cards-container .project-card--item {
   display: flex;
   margin: 20px;
-  max-width: 350px;
+  max-width: 450px;
   flex-direction: column;
   justify-content: center;
+}
+@media (max-width: 1418px) {
+  main .project-cards-container .project-card--item {
+    max-width: 350px;
+  }
 }
 main .project-cards-container .project-card--link {
   text-decoration: none;
   text-align: center;
+  color: #333;
 }
 main .project-cards-container .project-card--title {
   margin-top: 10px;
@@ -90,6 +115,7 @@ main .project-cards-container .project-card--title {
 }
 main .project-cards-container .project-card--image {
   max-width: 100%;
+  min-width: 250px;
   height: auto;
 }
 main .about-container {
@@ -97,7 +123,7 @@ main .about-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 0 40px;
+  padding: 0 20px;
 }
 main .about-container .profile-pic-container {
   flex: 0.35;
@@ -114,10 +140,11 @@ main .about-container .profile-pic-container #profile-pic--image {
 }
 main .about-container .about-body {
   flex: 0.65;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 40px;
+  padding: 40px 0;
   max-width: 960px;
   min-width: 450px;
 }
@@ -146,7 +173,7 @@ main .about-container .about-body .about-body--header h3:after {
   /* This creates the border. Replace black with whatever color you want. */
 }
 main .about-container .about-body .about-body--text {
-  padding: 20px;
+  padding: 0 40px;
   line-height: 1.5em;
   font-size: 1.4em;
   font-family: "Source Serif Pro", serif;

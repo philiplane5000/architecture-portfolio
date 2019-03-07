@@ -1,7 +1,6 @@
 require('dotenv').config()
 const env = process.env.NODE_ENV // 'dev' or 'test'
 
-
 const dev = {
     app: {
         port: 3000
@@ -21,7 +20,7 @@ const prod = {
         host: process.env.DB_PROD_HOST,
         port: 27017,
         username: process.env.DB_PROD_USER,
-        password: process.env.DB__PROD_PASS,
+        password: process.env.DB_PROD_PASS,
         name: process.env.DB_PROD_NAME
     }
 }

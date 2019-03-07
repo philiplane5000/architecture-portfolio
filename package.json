@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+    "start-prod": "NODE_ENV=prod node ./bin/www",
+    "start-dev": "NODE_ENV=dev && node ./bin/www",
     "nm-watch": "nodemon ./bin/www",
     "sass-watch": "sass --watch ./public/stylesheets/scss/main.scss:./public/stylesheets/css/main.css",
     "dev": "concurrently --kill-others \"npm run nm-watch \" \"npm run sass-watch\""

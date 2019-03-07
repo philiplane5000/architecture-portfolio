@@ -10,9 +10,8 @@ var apiRouter = require('./routes/api');
 var adminRouter = require('./routes/admin');
 var hbs = require('hbs');
 
-var mongoose = require('mongoose');
+var mongoose = require('./db');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/architect-portfolio', {useNewUrlParser: true});
 
 var app = express();
 

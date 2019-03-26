@@ -98,7 +98,7 @@ main {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        padding: 20px 60px;
+        // padding: 20px 60px;
         margin-bottom: 40px;
     }
     .project-cards-container { /* projects page styles */
@@ -190,42 +190,35 @@ main {
         flex-wrap: wrap;
         justify-content: center; 
         width: 100%;
-        max-width: 1405px;
+        max-width: 1400px;
         .project-media {
-            flex: 0.58;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            img {
-                max-width: 600px;
-                @media(max-width: $breakpoint-tablet) {
-                    max-width: 450px;
-                }
-                @media(max-width: $breakpoint-mobile) {
-                    max-width: 300px;
-                }
-            }
+            flex: 0.68;
+            padding: 0 40px;
+            min-width: 600px;
         }
         .project-desc {
-            flex: 0.42;
+            flex: 0.32;
             display: flex;
             flex-direction: column;
             align-items: baseline; 
             min-width: 450px;
-            margin: 0 40px;
+            padding: 0 40px;
             @media (max-width: $breakpoint-laptop) {
-                flex: .925;
+                flex: 1;
                 text-align: center;
             }
             .project-desc--name {
                 font-size: 2.2em;
-                margin: 30px auto;
+                padding-bottom: 30px;
             }
             .project-desc--about p {
-                    padding: 0 10px 20px 10px;
+                    padding-bottom: 20px;
                     line-height: 1.5em;
                     font-family: $secondary-font;
-                    font-size: 1.4em;
+                    font-size: 1.25em;
+            }
+            .project-desc--about .detail {
+                padding: 0;
             }
 
         }

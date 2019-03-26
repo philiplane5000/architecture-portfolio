@@ -82,7 +82,6 @@ main .content-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 20px 60px;
   margin-bottom: 40px;
 }
 main .project-cards-container {
@@ -184,50 +183,39 @@ main .project-container {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  max-width: 1405px;
+  max-width: 1400px;
 }
 main .project-container .project-media {
-  flex: 0.58;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-main .project-container .project-media img {
-  max-width: 600px;
-}
-@media (max-width: 768px) {
-  main .project-container .project-media img {
-    max-width: 450px;
-  }
-}
-@media (max-width: 480px) {
-  main .project-container .project-media img {
-    max-width: 300px;
-  }
+  flex: 0.68;
+  padding: 0 40px;
+  min-width: 600px;
 }
 main .project-container .project-desc {
-  flex: 0.42;
+  flex: 0.32;
   display: flex;
   flex-direction: column;
   align-items: baseline;
   min-width: 450px;
-  margin: 0 40px;
+  padding: 0 40px;
 }
 @media (max-width: 1266px) {
   main .project-container .project-desc {
-    flex: 0.925;
+    flex: 1;
     text-align: center;
   }
 }
 main .project-container .project-desc .project-desc--name {
   font-size: 2.2em;
-  margin: 30px auto;
+  padding-bottom: 30px;
 }
 main .project-container .project-desc .project-desc--about p {
-  padding: 0 10px 20px 10px;
+  padding-bottom: 20px;
   line-height: 1.5em;
   font-family: "Source Serif Pro", serif;
-  font-size: 1.4em;
+  font-size: 1.25em;
+}
+main .project-container .project-desc .project-desc--about .detail {
+  padding: 0;
 }
 main .form-container {
   width: 250px;

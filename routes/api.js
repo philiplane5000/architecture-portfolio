@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var apiController = require('../controllers/apiController');
-var db = require('../models');
 
 /* GET users listing. */
 router.get('/', apiController.getAllProjects)

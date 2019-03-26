@@ -7,7 +7,21 @@
         <div class="project-container">
 
             <section class="project-media">
-                <img src={{project.imageSrc}} alt={{project.id}}>
+                <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="ratio: 3:2">
+
+                    <ul class="uk-slideshow-items">
+                        {{#each project.images}}
+                        <li>
+                            <img src={{imgSrc}} id={{_id}} uk-cover>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+                        uk-slideshow-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+                        uk-slideshow-item="next"></a>
+                </div>
+
             </section>
 
             <section class="project-desc">
@@ -15,7 +29,11 @@
 
                 <div class="project-desc--about">
                     {{#each project.about}}
-                    <p>{{this}}</p>
+                    <p>{{paragraph}}</p>
+                    {{/each}}
+
+                    {{#each project.details}}
+                    <p class="detail">{{detail}}</p>
                     {{/each}}
                 </div>
 

@@ -5,19 +5,22 @@ $background-color: rgba(245, 245, 245, 0.5);
 $primary-font: 'Open Sans', sans-serif;
 $secondary-font: 'Source Serif Pro', serif;
 $tertiary-font: 'Montserrat', sans-serif;
-$breakpoint-tablet: 768px;
-$breakpoint-mobile: 480px; 
-$breakpoint-laptop: 1266px;
 
-// @mixin project-card($src) {
-//     background-image: url($src);
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     background-size: contain;
-//     height: 275px;
-//     width: 400px;
-        
-// }
+@mixin for-phone-only {
+    @media (max-width: 639px) { @content; }
+  }
+  @mixin for-tablet-portrait-up {
+    @media (min-width: 640px) { @content; }
+  }
+  @mixin for-tablet-landscape-up {
+    @media (min-width: 1040px) { @content; }
+  }
+  @mixin for-desktop-up {
+    @media (min-width: 1440px) { @content; }
+  }
+  @mixin for-big-desktop-up {
+    @media (min-width: 1800px) { @content; }
+  }
 
 html {
     font-size: 10px;
@@ -25,57 +28,106 @@ html {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
          box-sizing: border-box;
-    @media(max-width: $breakpoint-tablet) {
-        font-size: 9.85px;
-    }
-    @media(max-width: $breakpoint-mobile) {
-        font-size: 9.675px;
-    }
 }
 
 body {
     background-color: $background-color;
-    min-width: 320px;
+    width: 100%;
+}
+
+.outermost-container {
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    @include for-phone-only {
+        min-width: 360px; /* (x3 cols) @ 100px [Total Padding = 60px, 2 gutters @ 20px, left @ 10px right @ 10px] */
+    }
+    @include for-tablet-portrait-up {
+        max-width: 720px; /* (x6 cols) @ 100px [Total Padding = 120px, 5 gutters @ 20px, left @ 10px right @ 10px] */
+    }
+    @include for-tablet-landscape-up {
+        max-width: 1080px; /* (x9 cols) @ 100px [Total Padding = 180px, 8 gutters @ 20px, left @ 10px right @ 10px]*/
+    }
+    @include for-desktop-up {
+        max-width: 1440px; /* (x12 cols) @ 100px [Total Padding = 240px, 11 gutters @ 20px, left @ 10px right @ 10px] */
+    }
+    @include for-big-desktop-up {
+        max-width: 1680px; /* (x12 cols) @ 120px [Total Padding = 240px, 11 gutters @ 20px, left @ 10px right @ 10px]  */
+    }
 }
 
 header {
     font-family: $primary-font;
     display: flex;
-    margin: 80px 40px 60px;
-    padding-bottom: 20px;
-    justify-content: space-between;
+    flex-wrap: nowrap;
     align-items: baseline;
     border-bottom: 2px solid $primary-color;
-    @media(max-width: $breakpoint-tablet) {
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
+    padding: 60px 0 20px 0;
+    @include for-phone-only {
+        flex-wrap: wrap;
     }
-    #main-header{
+    h1 {
+        border: 2px solid teal;
         font-size: 4em;
-        @media(max-width: $breakpoint-tablet) {
-            font-size: 3.2em;
-            margin-bottom: 10px;
+        margin-right: 20px;
+        @include for-phone-only {
+            text-align: center;
+            min-width: 340px;
+            margin: 0 auto;
+        }
+        @include for-tablet-portrait-up {
+            min-width: 340px;
+            margin-right: 20px;
+        }
+        @include for-tablet-landscape-up {
+            min-width: 700px;
+            margin-right: 20px;
+        }
+        @include for-desktop-up {
+            min-width: 940px;
+            margin-right: 20px;
+        }
+        @include for-big-desktop-up {
+            min-width: 1100px;
+            margin-right: 20px;
         }
     }
     nav {
+        border: 2px solid greenyellow;
+        display: flex;
+        @include for-phone-only {
+            min-width: 340px;
+            margin: 0 auto;
+            justify-content: center;
+        }
+        @include for-tablet-portrait-up {
+            min-width: 340px;
+        }
+        @include for-tablet-landscape-up {
+            min-width: 340px;
+        }
+        @include for-desktop-up {
+            min-width: 460px;
+        }
+        @include for-big-desktop-up {
+            min-width: 540px;
+        }
         .navbar {
+            border: 2px dashed yellow;
             display: flex;
             justify-content: space-between;
             margin: 0;
             padding: 0;
             list-style: none;
-            .navlink {
+            @include for-phone-only {
+                padding-top: 10px;
+            }
+            li {
                 margin: 0 15px;
-                font-size: 1.8em;
+                font-size: 2em;
                 a {
                     color: $secondary-color;
                     text-decoration: none;
-                    text-transform: uppercase;
-                    opacity: 0.75;
-                    @media(max-width: $breakpoint-tablet) {
-                        font-size: 1.4rem;
-                    }
                 }
                 a:visited {
                     color: $secondary-color;
@@ -87,20 +139,16 @@ header {
                     transition: all 0.25s ease-in;
                 }
             }
-
+            li:first-child {
+                margin-left: 0; 
+            }
         }
     }
 }
 
 main {
-    // padding: 0 20px;
-    .content-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        // padding: 20px 60px;
-        margin-bottom: 40px;
-    }
+    border: 1px dashed gray;
+    margin: 40px 0;
     .project-cards-container { /* projects page styles */
         display: flex;
         flex-wrap: wrap;
@@ -130,6 +178,65 @@ main {
             min-width: 250px;
             height: auto;
         }
+    }
+    .project-container {
+        display: flex;
+        @include for-tablet-portrait-up {
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .project-media {
+                flex: 0.9666;
+                margin: 0 auto;
+            }
+            .project-desc {
+                flex: 0.9666;
+                display: flex;
+                flex-direction: column;
+                align-items: baseline;
+                .project-desc--name {
+                    font-size: 2.4em;
+                    padding-bottom: 30px;
+                }
+                .project-desc--about p {
+                        padding-bottom: 20px;
+                        line-height: 1.5em;
+                        font-family: $secondary-font;
+                        font-size: 1.4em;
+                }
+                .project-desc--about .detail {
+                    padding: 0;
+                }
+            }
+        }
+        @include for-desktop-up {
+            flex-direction: row;
+            flex-wrap: wrap;
+            .project-media {
+                flex: 0.6525;
+                margin-right: 40px;
+            }
+            .project-desc {
+                flex: 0.3333334;
+                display: flex;
+                flex-direction: column;
+                align-items: baseline;
+                .project-desc--name {
+                    font-size: 2.4em;
+                    padding-bottom: 30px;
+                }
+                .project-desc--about p {
+                        padding-bottom: 20px;
+                        line-height: 1.5em;
+                        font-family: $secondary-font;
+                        font-size: 1.4em;
+                }
+                .project-desc--about .detail {
+                    padding: 0;
+                }
+            }
+        }
+
     }
     .about-container { /* about page styles */
         display: flex;
@@ -182,45 +289,6 @@ main {
                 font-size: 1.4em;
                 font-family: $secondary-font;
             }
-        }
-    }
-    .project-container {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center; 
-        width: 100%;
-        max-width: 1400px;
-        .project-media {
-            flex: 0.68;
-            padding: 0 40px;
-            min-width: 600px;
-        }
-        .project-desc {
-            flex: 0.32;
-            display: flex;
-            flex-direction: column;
-            align-items: baseline; 
-            min-width: 450px;
-            padding: 0 40px;
-            @media (max-width: $breakpoint-laptop) {
-                flex: 1;
-                text-align: center;
-            }
-            .project-desc--name {
-                font-size: 2.2em;
-                padding-bottom: 30px;
-            }
-            .project-desc--about p {
-                    padding-bottom: 20px;
-                    line-height: 1.5em;
-                    font-family: $secondary-font;
-                    font-size: 1.25em;
-            }
-            .project-desc--about .detail {
-                padding: 0;
-            }
-
         }
     }
     .form-container {

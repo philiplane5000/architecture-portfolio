@@ -1,24 +1,15 @@
 const mongoose = require('mongoose');
 
 const imageSchema = new mongoose.Schema({
-    imgSrc: {
-        type: String,
-    },
-    caption: {
-        type: String,
-    }
+    imgSrc: String
 })
 
 const aboutSchema = new mongoose.Schema({
-    paragraph: {
-        type: String
-    }
+    paragraph: String
 })
 
 const detailSchema = new mongoose.Schema({
-    detail: {
-        type: String
-    }
+    detail: String
 })
 
 const ProjectSchema = new mongoose.Schema({

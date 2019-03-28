@@ -282,7 +282,61 @@ main {
             min-width: 450px;
         }
     }
+    
+    .project-panel-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 80px;
+        @include for-tablet-landscape-up {
+            .project-panel-card {
+                cursor: pointer;
+                width: 340px;
+                height: 226px;
+                background-size: contain;
+            }
+            div:last-of-type {
+                display: none;
+            }
+        } 
+        @include for-desktop-up {
+            .project-panel-card {
+                width: 340px;
+                height: 226px;
+            }
+            div:last-of-type {
+                display: block;
+            }
+        }
+        @include for-big-desktop-up {
+            .project-panel-card {
+                width: 400px;
+                height: 267px;
+            }
+        }
+    }
 
+    .bottom-nav {
+        display: flex;
+        justify-content: center;
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        a:visited {
+            color: black;
+        }
+        a:hover {
+            color: $link-color;
+        }
+        a:active {
+            color: $link-color;
+        }
+        @include for-tablet-landscape-up {
+            a {
+                display: none;
+            }
+        }
+    }
 
     .about-container { /* about page styles */
         display: flex;

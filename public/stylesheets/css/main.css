@@ -294,6 +294,59 @@ main .project-container .project-desc-container .project-desc--about .detail {
     min-width: 450px;
   }
 }
+main .project-panel-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+@media (min-width: 1040px) {
+  main .project-panel-container .project-panel-card {
+    cursor: pointer;
+    width: 340px;
+    height: 226px;
+    background-size: contain;
+  }
+  main .project-panel-container div:last-of-type {
+    display: none;
+  }
+}
+@media (min-width: 1440px) {
+  main .project-panel-container .project-panel-card {
+    width: 340px;
+    height: 226px;
+  }
+  main .project-panel-container div:last-of-type {
+    display: block;
+  }
+}
+@media (min-width: 1800px) {
+  main .project-panel-container .project-panel-card {
+    width: 400px;
+    height: 267px;
+  }
+}
+main .bottom-nav {
+  display: flex;
+  justify-content: center;
+}
+main .bottom-nav a {
+  color: black;
+  text-decoration: none;
+}
+main .bottom-nav a:visited {
+  color: black;
+}
+main .bottom-nav a:hover {
+  color: #ff1932;
+}
+main .bottom-nav a:active {
+  color: #ff1932;
+}
+@media (min-width: 1040px) {
+  main .bottom-nav a {
+    display: none;
+  }
+}
 main .about-container {
   /* about page styles */
   display: flex;

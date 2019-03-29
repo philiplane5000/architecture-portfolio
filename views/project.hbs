@@ -13,9 +13,9 @@
                     </li>
                     {{/each}}
                 </ul>
-                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+                <a class="uk-position-center-left uk-position-small" href="#" uk-slidenav-previous
                     uk-slideshow-item="previous"></a>
-                <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+                <a class="uk-position-center-right uk-position-small" href="#" uk-slidenav-next
                     uk-slideshow-item="next"></a>
             </div>
         </section>
@@ -33,29 +33,19 @@
                 {{/each}}
             </div>
         </section>
+
     </div>
 
     <section class="project-panel-container">
-
-        {{!-- <img src="https://place-hold.it/400x267/500/white.jpg" alt="project-image">
-        <img src="https://place-hold.it/400x267/333/white.jpg" alt="project-image">
-        <img src="https://place-hold.it/400x267/666/white.jpg" alt="project-image">
-        <img src="https://place-hold.it/400x267/222/white.jpg" alt="project-image"> --}}
-
-        {{!-- FETCH ALL DATA -- SHUFFLE THE ARRAY -- PLACE FIRST FOUR HERE --}}
-        <div class="project-panel-card" style="background-image: url('https://s3.eu-west-2.amazonaws.com/architect-portfolio/image02-600w.jpg')"></div>
-        <div class="project-panel-card" style="background-image: url('https://s3.eu-west-2.amazonaws.com/architect-portfolio/image01-600w.JPG')"></div>
-        <div class="project-panel-card" style="background-image: url('https://s3.eu-west-2.amazonaws.com/architect-portfolio/image04-600w.jpg')"></div>
-        <div class="project-panel-card" style="background-image: url('https://s3.eu-west-2.amazonaws.com/architect-portfolio/image03-600w.jpg')"></div>
-
-
-
+        {{#each project.images}}
+            <div class="project-panel-card">
+                <img src={{imgSrc}} alt={{_id}}>
+            </div>
+        {{/each}}
     </section>
 
     <div class="bottom-nav">
-
         <a href="#top">BACK TO TOP &#8593 </a>
-
     </div>
 
 </main>

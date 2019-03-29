@@ -299,6 +299,10 @@ main .project-panel-container {
   justify-content: space-between;
   margin-top: 80px;
 }
+main .project-panel-container .project-panel-card:hover {
+  transition: all 0.5s ease-in;
+  transform: scale(1.375);
+}
 @media (min-width: 1040px) {
   main .project-panel-container .project-panel-card {
     cursor: pointer;

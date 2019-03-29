@@ -287,6 +287,10 @@ main {
         display: flex;
         justify-content: space-between;
         margin-top: 80px;
+        .project-panel-card:hover {
+            transition: all 0.5s ease-in;
+            transform: scale(1.375);
+        }
         @include for-tablet-landscape-up {
             .project-panel-card {
                 cursor: pointer;

@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     const image01 = document.querySelector("[name='image01']");
     const image02 = document.querySelector("[name='image02']");
     const image03 = document.querySelector("[name='image03']");
+    const image04 = document.querySelector("[name='image04']");
 
     const about01 = document.querySelector("[name='about01']");
     const about02 = document.querySelector("[name='about02']");
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     const details04 = document.querySelector("[name='details04']");
 
     const submitBtn = document.querySelector("#submitNewProject");
+    const deleteProjectBtn = document.querySelector("#deleteProject");
 
     submitBtn.addEventListener('click', function(e){
         e.preventDefault()
@@ -28,13 +30,30 @@ document.addEventListener("DOMContentLoaded", function(e) {
         console.log(newProject)
         console.log('***********************')
         axios.post('/api', newProject)
-            .then(response => {
-                console.log(response)
+        .then(res => {
+            console.log(res)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    })
+    
+    deleteProjectBtn.addEventListener('click', function(e) {
+        e.preventDefault()
+        let id = projectId.value;
+        console.log('***** PROJECT-ID *****')
+        console.log(id);
+        console.log('***********************')
+        axios.delete(`/api/${id}`)
+            .then(res => {
+                console.log(res.data.status)
             })
-            .catch(error => {
-                console.log(error)
+            .catch(err => {
+                console.log(err)
             })
     })
+
+
 
     function buildProjectObj() {
 
@@ -50,6 +69,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
         }
         if(image03.value.length > 0) {
             imageArray.push({imgSrc: image03.value})
+        }
+        if(image04.value.length > 0) {
+            imageArray.push({imgSrc: image04.value})
         }
 
         aboutArray = [];
@@ -90,6 +112,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
             about: aboutArray,
             details: detailsArray,
         }
+    }
+
+    function deleteProject(id) {
+        axios.delete(`/api/${id}`)
+
     }
     //END SCRIPT //
   });

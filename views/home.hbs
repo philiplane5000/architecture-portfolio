@@ -3,18 +3,18 @@
 <main>
 
         <div class="project-cards-container">
+            
             {{#each projects}}
-
-            <div class="project-card--item " data-id={{_id}}>
+            <div class="project-card--item " data-id={{_id}} id={{id}} >
                 <a href="/project/{{_id}}" class="project-card--link">
-                    <img src={{images.[0].imgSrc}} class="project-card--image">
+                    <img src={{coverImage}} class="project-card--image">
                 </a>
                 <a href="/project/{{_id}}" class="project-card--link">
                     <div class="project-card--title">{{name}}</div>
                 </a>
             </div>
-
             {{/each}}
+
         </div>
 
 </main>

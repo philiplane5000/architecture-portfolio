@@ -18,5 +18,14 @@ module.exports = {
         .catch(err => {
         res.json(err);
         })
+    },
+    deleteProject: (req, res) => {
+    db.Project.deleteOne({id: req.params.id})
+      .then(doc => {
+        res.json(doc);
+      })
+      .catch(err => {
+        res.json(err)
+      })
     }
 }

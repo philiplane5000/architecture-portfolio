@@ -7,4 +7,6 @@ router.get('/', apiController.getAllProjects)
 
 router.post('/', apiController.createProject)
 
+router.delete('/:id', apiController.deleteProject)
+
 module.exports = router;

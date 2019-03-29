@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function(e) { 
     //BEGIN SCRIPT//
-    const projectName = document.querySelector("[name='project-name']");
-    const projectId = document.querySelector("[name='project-id']");
+    const projectNameInput = document.querySelector("[name='project-name']");
+    const projectIdInput = document.querySelector("[name='project-id']");
 
-    const coverImage = document.querySelector("[name='cover-image']");
+    const coverImageInput = document.querySelector("[name='cover-image']");
     const image01 = document.querySelector("[name='image01']");
     const image02 = document.querySelector("[name='image02']");
     const image03 = document.querySelector("[name='image03']");
@@ -40,11 +40,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
     
     deleteProjectBtn.addEventListener('click', function(e) {
         e.preventDefault()
-        let id = projectId.value;
+        let projectId = projectIdInput.value;
         console.log('***** PROJECT-ID *****')
-        console.log(id);
+        console.log(projectId);
         console.log('***********************')
-        axios.delete(`/api/${id}`)
+        axios.delete(`/api/${projectId}`)
             .then(res => {
                 console.log(res.data.status)
             })
@@ -53,14 +53,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
             })
     })
 
-
-
     function buildProjectObj() {
 
         let imageArray, aboutArray, detailsArray;
 
         imageArray = [];
-        imageArray.push({imgSrc: coverImage.value});
         if(image01.value.length > 0) {
             imageArray.push({imgSrc: image01.value})
         }
@@ -106,8 +103,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
         }
 
         return {
-            name: projectName.value,
-            id: projectId.value,
+            name: projectNameInput.value,
+            coverImage: coverImageInput.value,
+            id: projectIdInput.value,
             images: imageArray,
             about: aboutArray,
             details: detailsArray,

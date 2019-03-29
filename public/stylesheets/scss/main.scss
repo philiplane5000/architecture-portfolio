@@ -184,11 +184,7 @@ main {
     .project-container {
         /* CATCH ALL STYLES */
         display: flex;
-        .project-media-container {
-            // border: 1px dashed blue;
-        }
         .project-desc-container {
-            // border: 1px dashed green;
             display: flex;
             flex-direction: column;
             align-items: baseline;
@@ -249,7 +245,7 @@ main {
         .project-media-container {
             min-width: 700px;
             margin-right: 20px;
-            padding: 0 20px 20px 0;
+            padding: 0 40px 20px 0;
         }
         .project-desc-container {
             min-width: 340px;
@@ -287,12 +283,16 @@ main {
         display: flex;
         justify-content: space-between;
         margin-top: 80px;
-        .project-panel-card:hover {
+        .project-panel--card {
+            display: none;
+        }
+        .project-panel--card:hover {
             transition: all 0.5s ease-in;
-            transform: scale(1.375);
+            transform: scale(1.3334);
         }
         @include for-tablet-landscape-up {
-            .project-panel-card {
+            .project-panel--card {
+                display: block;
                 cursor: pointer;
                 width: 340px;
                 height: 226px;
@@ -303,7 +303,7 @@ main {
             }
         } 
         @include for-desktop-up {
-            .project-panel-card {
+            .project-panel--card {
                 width: 340px;
                 height: 226px;
             }
@@ -312,7 +312,7 @@ main {
             }
         }
         @include for-big-desktop-up {
-            .project-panel-card {
+            .project-panel--card {
                 width: 400px;
                 height: 267px;
             }
@@ -342,59 +342,117 @@ main {
         }
     }
 
-    .about-container { /* about page styles */
+    .about-container { 
+        /*CATCH ALL STYLES*/
         display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        padding: 0 20px;
+        flex-direction: row;
         .profile-pic-container {
-            flex: .35;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: left;
             #profile-pic--image {
-                border-radius: 50%;
-                width: 300px;
-                min-width: 150px;
-                height: 300px;
-                min-height: 150px;
+                height: auto;
+                margin-bottom: 40px;
             }
         }
         .about-body {
-            flex: .65;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            padding: 40px 0;
-            max-width: 960px;
-            min-width: 450px;
-            .about-body--header {
-                margin: 20px 0;
-                text-align: center;
-                h3 {
-                    display: inline;
-                    font-size: 2.4em;
-                    line-height: 1.6em;
-                    letter-spacing: 2px;
+            .about-body--text {
+                padding-left: 20px;
+                color: black;
+                line-height: 1.4em;
+                font-family: $secondary-font;
+                a {
+                    color: #494949;
+                    text-decoration: underline;
                 }
-                h3:after {
-                    content: ""; /* This is necessary for the pseudo element to work. */ 
-                    display: block; /* This will put the pseudo element on its own line. */
-                    margin: 0 auto; /* This will center the border. */
-                    width: 65px; /* Change this to whatever width you want. */
-                    padding-top: 2px; /* This creates some space between the element and the border. */
-                    border-bottom: 2px solid $link-color; /* This creates the border. Replace black with whatever color you want. */
+                .contact {
+                    color: #494949;
                 }
             }
-            .about-body--text {
-                padding: 0 40px;
-                line-height: 1.5em;
-                font-size: 1.4em;
-                font-family: $secondary-font;
+        } /*END CATCH ALL STYLES*/
+        @include for-phone-only {
+            flex-direction: column;
+            .profile-pic-container {
+                min-width: 340px;
+                justify-content: center;
+                #profile-pic--image {
+                    max-width: 200px;
+                }
+            }
+            .about-body {
+                min-width: 340px;
+                margin: 0 auto;
+                .about-body--text {
+                    font-size: 1.6em;
+                    text-align: center;
+                }
+            }
+        }
+        @include for-tablet-portrait-up {
+            flex-direction: column;
+            .profile-pic-container {
+                min-width: 340px;
+                justify-content: center;
+                margin-right: 20px;
+                #profile-pic--image {
+                    max-width: 250px;
+                }
+            }
+            .about-body {
+                min-width: 340px;
+                .about-body--text {
+                    font-size: 1.6em;
+                }
+            }
+        }
+        @include for-tablet-landscape-up {
+            flex-direction: row;
+            .profile-pic-container {
+                min-width: 340px;
+                justify-content: left;
+                #profile-pic--image {
+                    max-width: 325px;
+                    height: auto;
+                }
+            }
+            .about-body {
+                min-width: 700px;
+                .about-body--text {
+                    font-size: 1.8em;
+                }
+            }
+        }
+        @include for-desktop-up {
+            .profile-pic-container {
+                min-width: 460px;
+                margin-right: 20px;
+                #profile-pic--image {
+                    max-width: 350px;
+                }
+            }
+            .about-body {
+                min-width: 940px;
+                .about-body--text {
+                    font-size: 1.8em;
+                }
+            }
+        }
+        @include for-big-desktop-up {
+            .profile-pic-container {
+                min-width: 540px;
+                margin-right: 20px;
+                #profile-pic--image {
+                    max-width: 400px;
+                }
+            }
+            .about-body {
+                min-width: 1100px;
+                .about-body--text {
+                    font-size: 2em;
+                }
             }
         }
     }
+
     .form-container {
         width: 250px;
         #newProjectForm {
@@ -411,7 +469,9 @@ footer {
     display: flex;
     justify-content: center;
     width: 85%;
-    margin: 0 auto;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
     height: 90px;
     padding-top: 15px;
     border-top: 1px solid lightslategray;

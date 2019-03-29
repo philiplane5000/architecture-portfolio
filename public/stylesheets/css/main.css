@@ -261,7 +261,7 @@ main .project-container .project-desc-container .project-desc--about .detail {
   main .project-media-container {
     min-width: 700px;
     margin-right: 20px;
-    padding: 0 20px 20px 0;
+    padding: 0 40px 20px 0;
   }
   main .project-desc-container {
     min-width: 340px;
@@ -299,12 +299,16 @@ main .project-panel-container {
   justify-content: space-between;
   margin-top: 80px;
 }
-main .project-panel-container .project-panel-card:hover {
+main .project-panel-container .project-panel--card {
+  display: none;
+}
+main .project-panel-container .project-panel--card:hover {
   transition: all 0.5s ease-in;
-  transform: scale(1.375);
+  transform: scale(1.3334);
 }
 @media (min-width: 1040px) {
-  main .project-panel-container .project-panel-card {
+  main .project-panel-container .project-panel--card {
+    display: block;
     cursor: pointer;
     width: 340px;
     height: 226px;
@@ -315,7 +319,7 @@ main .project-panel-container .project-panel-card:hover {
   }
 }
 @media (min-width: 1440px) {
-  main .project-panel-container .project-panel-card {
+  main .project-panel-container .project-panel--card {
     width: 340px;
     height: 226px;
   }
@@ -324,7 +328,7 @@ main .project-panel-container .project-panel-card:hover {
   }
 }
 @media (min-width: 1800px) {
-  main .project-panel-container .project-panel-card {
+  main .project-panel-container .project-panel--card {
     width: 400px;
     height: 267px;
   }
@@ -352,64 +356,119 @@ main .bottom-nav a:active {
   }
 }
 main .about-container {
-  /* about page styles */
+  /*CATCH ALL STYLES*/
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 0 20px;
+  flex-direction: row;
+  /*END CATCH ALL STYLES*/
 }
 main .about-container .profile-pic-container {
-  flex: 0.35;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
 }
 main .about-container .profile-pic-container #profile-pic--image {
-  border-radius: 50%;
-  width: 300px;
-  min-width: 150px;
-  height: 300px;
-  min-height: 150px;
-}
-main .about-container .about-body {
-  flex: 0.65;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 40px 0;
-  max-width: 960px;
-  min-width: 450px;
-}
-main .about-container .about-body .about-body--header {
-  margin: 20px 0;
-  text-align: center;
-}
-main .about-container .about-body .about-body--header h3 {
-  display: inline;
-  font-size: 2.4em;
-  line-height: 1.6em;
-  letter-spacing: 2px;
-}
-main .about-container .about-body .about-body--header h3:after {
-  content: "";
-  /* This is necessary for the pseudo element to work. */
-  display: block;
-  /* This will put the pseudo element on its own line. */
-  margin: 0 auto;
-  /* This will center the border. */
-  width: 65px;
-  /* Change this to whatever width you want. */
-  padding-top: 2px;
-  /* This creates some space between the element and the border. */
-  border-bottom: 2px solid #ff1932;
-  /* This creates the border. Replace black with whatever color you want. */
+  height: auto;
+  margin-bottom: 40px;
 }
 main .about-container .about-body .about-body--text {
-  padding: 0 40px;
-  line-height: 1.5em;
-  font-size: 1.4em;
+  padding-left: 20px;
+  color: black;
+  line-height: 1.4em;
   font-family: "Source Serif Pro", serif;
+}
+main .about-container .about-body .about-body--text a {
+  color: #494949;
+  text-decoration: underline;
+}
+main .about-container .about-body .about-body--text .contact {
+  color: #494949;
+}
+@media (max-width: 639px) {
+  main .about-container {
+    flex-direction: column;
+  }
+  main .about-container .profile-pic-container {
+    min-width: 340px;
+    justify-content: center;
+  }
+  main .about-container .profile-pic-container #profile-pic--image {
+    max-width: 200px;
+  }
+  main .about-container .about-body {
+    min-width: 340px;
+    margin: 0 auto;
+  }
+  main .about-container .about-body .about-body--text {
+    font-size: 1.6em;
+    text-align: center;
+  }
+}
+@media (min-width: 640px) {
+  main .about-container {
+    flex-direction: column;
+  }
+  main .about-container .profile-pic-container {
+    min-width: 340px;
+    justify-content: center;
+    margin-right: 20px;
+  }
+  main .about-container .profile-pic-container #profile-pic--image {
+    max-width: 250px;
+  }
+  main .about-container .about-body {
+    min-width: 340px;
+  }
+  main .about-container .about-body .about-body--text {
+    font-size: 1.6em;
+  }
+}
+@media (min-width: 1040px) {
+  main .about-container {
+    flex-direction: row;
+  }
+  main .about-container .profile-pic-container {
+    min-width: 340px;
+    justify-content: left;
+  }
+  main .about-container .profile-pic-container #profile-pic--image {
+    max-width: 325px;
+    height: auto;
+  }
+  main .about-container .about-body {
+    min-width: 700px;
+  }
+  main .about-container .about-body .about-body--text {
+    font-size: 1.8em;
+  }
+}
+@media (min-width: 1440px) {
+  main .about-container .profile-pic-container {
+    min-width: 460px;
+    margin-right: 20px;
+  }
+  main .about-container .profile-pic-container #profile-pic--image {
+    max-width: 350px;
+  }
+  main .about-container .about-body {
+    min-width: 940px;
+  }
+  main .about-container .about-body .about-body--text {
+    font-size: 1.8em;
+  }
+}
+@media (min-width: 1800px) {
+  main .about-container .profile-pic-container {
+    min-width: 540px;
+    margin-right: 20px;
+  }
+  main .about-container .profile-pic-container #profile-pic--image {
+    max-width: 400px;
+  }
+  main .about-container .about-body {
+    min-width: 1100px;
+  }
+  main .about-container .about-body .about-body--text {
+    font-size: 2em;
+  }
 }
 main .form-container {
   width: 250px;
@@ -426,7 +485,9 @@ footer {
   display: flex;
   justify-content: center;
   width: 85%;
-  margin: 0 auto;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
   height: 90px;
   padding-top: 15px;
   border-top: 1px solid lightslategray;

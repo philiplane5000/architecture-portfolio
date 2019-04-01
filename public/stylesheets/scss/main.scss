@@ -150,27 +150,15 @@ header {
 main {
     // border: 1px dashed gray;
     margin: 40px 0;
-    .project-cards-outer-container {  /* CATCH ALL STYLES */
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+    @include for-phone-only {
+        margin: 40px 0 20px 0;
+    }
+    .project-cards-outer-container { /* CATCH ALL STYLES */
+        display: grid;
         a {
             cursor: pointer;
             color: $black;
             text-decoration: none;
-        }
-        .project-card--wrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        .project-card--image-wrapper {
-            max-width: 100%;
-        }
-        .project-card--image {
-            max-width: 100%;
-            height: auto;
         }
         .project-card--title-wrapper {
             height: 50px;
@@ -180,33 +168,38 @@ main {
             justify-content: center;
             font-family: $secondary-font;
             font-size: 1.6em;
-        }
+        } /* END CATCH ALL STYLES */
         @include for-phone-only {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             .project-card--wrapper {
-                max-width: 220px;
+                max-width: 340px;
+                height: auto;
+                margin-bottom: 20px;
             }
-        }
+        } 
         @include for-tablet-portrait-up {
-            .project-card--wrapper {
-                max-width: 220px;
-            }
-        }
+            grid-template-columns: repeat(3, 220px);
+            grid-template-rows: 280px;
+            grid-gap: 20px;
+        } 
         @include for-tablet-landscape-up {
-            .project-card--wrapper {
-                max-width: 340px;
-            }
-        }
+            grid-template-columns: repeat(3, 340px);
+            grid-template-rows: 400px;
+            grid-gap: 20px;
+        } 
         @include for-desktop-up {
-            .project-card--wrapper {
-                max-width: 340px;
-            }
-        }
+            grid-template-columns: repeat(4, 340px);
+            grid-template-rows: 400px;
+            grid-gap: 20px;
+        } 
         @include for-big-desktop-up {
-            .project-card--wrapper {
-                max-width: 400px;
-            }
-        }
-
+            grid-template-columns: repeat(4, 400px);
+            grid-template-rows: 460px;
+            grid-gap: 20px;
+        } 
     }
 
     .project-container {  /* CATCH ALL STYLES */
@@ -418,7 +411,7 @@ main {
             flex-direction: column;
             .profile-pic-container {
                 min-width: 340px;
-                justify-content: center;
+                justify-content: left;
                 margin-right: 20px;
                 #profile-pic--image {
                     max-width: 250px;
@@ -427,6 +420,7 @@ main {
             .about-body {
                 min-width: 340px;
                 .about-body--text {
+                    padding-left: 0;
                     font-size: 1.6em;
                 }
             }
@@ -444,7 +438,7 @@ main {
             .about-body {
                 min-width: 700px;
                 .about-body--text {
-                    font-size: 1.8em;
+                    font-size: 1.6em;
                 }
             }
         }
@@ -458,9 +452,9 @@ main {
             }
             .about-body {
                 min-width: 940px;
-                .about-body--text {
-                    font-size: 1.8em;
-                }
+                // .about-body--text {
+                //     font-size: 1.8em;
+                // }
             }
         }
         @include for-big-desktop-up {
@@ -474,7 +468,7 @@ main {
             .about-body {
                 min-width: 1100px;
                 .about-body--text {
-                    font-size: 2em;
+                    font-size: 1.8em;
                 }
             }
         }
@@ -495,7 +489,6 @@ main {
 footer {
     display: flex;
     justify-content: center;
-    width: 85%;
     margin-top: 100px;
     margin-left: auto;
     margin-right: auto;

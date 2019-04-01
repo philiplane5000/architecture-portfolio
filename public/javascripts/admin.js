@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
     //BEGIN SCRIPT//
     const projectNameInput = document.querySelector("[name='project-name']");
     const projectIdInput = document.querySelector("[name='project-id']");
+    const projectLocation = document.querySelector("[name='project-location']");
+    const projectClass = document.querySelector("[name='project-class']");
 
     const coverImageInput = document.querySelector("[name='cover-image']");
     const image01 = document.querySelector("[name='image01']");
@@ -106,6 +108,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
             name: projectNameInput.value,
             coverImage: coverImageInput.value,
             id: projectIdInput.value,
+            location: projectLocation.value,
+            class: projectClass.value,
             images: imageArray,
             about: aboutArray,
             details: detailsArray,

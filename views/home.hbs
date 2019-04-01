@@ -2,17 +2,24 @@
 
 <main>
 
-        <div class="project-cards-container">
+        <div class="project-cards-outer-container">
             
             {{#each projects}}
-            <div class="project-card--item " data-id={{_id}} id={{id}} >
-                <a href="/project/{{_id}}" class="project-card--link">
-                    <img src={{coverImage}} class="project-card--image">
-                </a>
-                <a href="/project/{{_id}}" class="project-card--link">
-                    <div class="project-card--title">{{name}}</div>
-                </a>
-            </div>
+            <a href="/project/{{_id}}">
+                <div class="project-card--wrapper">
+                    <div class="project-card--image-wrapper">
+                        <img src={{coverImage}} class="project-card--image">
+                    </div>
+                    <div class="project-card--title-wrapper">
+                        <div class="project-card--title">
+                            {{name}}
+                        </div>
+                        <div class="project-card--details">
+                            London, UK | Metropolitan Workshop
+                        </div>
+                    </div>
+                </div>
+            </a>
             {{/each}}
 
         </div>

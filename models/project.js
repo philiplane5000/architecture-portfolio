@@ -17,6 +17,14 @@ const ProjectSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    location: {
+        type: String,
+        required: true,
+    },
+    class: {
+        type: String,
+        required: true,
+    },
     id: {
         type: String,
         required: true

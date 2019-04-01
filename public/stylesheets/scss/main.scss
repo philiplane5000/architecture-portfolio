@@ -63,13 +63,11 @@ header {
     display: flex;
     flex-wrap: nowrap;
     align-items: baseline;
-    // border-bottom: 2px solid $black;
     padding: 60px 0 20px 0;
     @include for-phone-only {
         flex-wrap: wrap;
     }
     h1 {
-        // border: 2px solid teal;
         font-size: 4em;
         margin-right: 20px;
         @include for-phone-only {
@@ -95,7 +93,6 @@ header {
         }
     }
     nav {
-        // border: 2px solid greenyellow;
         display: flex;
         @include for-phone-only {
             min-width: 340px;
@@ -115,7 +112,6 @@ header {
             min-width: 540px;
         }
         .navbar {
-            // border: 2px dashed yellow;
             display: flex;
             justify-content: space-between;
             margin: 0;
@@ -136,8 +132,7 @@ header {
                 }
                 a:focus, a:hover {
                     opacity: 1;
-                    color: $link-color;
-                    transition: all 0.25s ease-in;
+                    border-bottom: 2px solid $black;
                 }
             }
             li:first-child {
@@ -148,7 +143,6 @@ header {
 }
 
 main {
-    // border: 1px dashed gray;
     margin: 40px 0;
     @include for-phone-only {
         margin: 40px 0 20px 0;
@@ -160,35 +154,66 @@ main {
             color: $black;
             text-decoration: none;
         }
-        .project-card--title-wrapper {
+        .project-card--about-wrapper {
             height: 50px;
-            display: flex;
-            flex-direction: column;
-            align-items: baseline;
-            justify-content: center;
             font-family: $secondary-font;
-            font-size: 1.6em;
+            .project-card--title {
+                font-size: 1.6em;
+            }
+            .project-card--details {
+                font-size: 1.4rem;
+                margin-top: 3px;
+                color: gray;
+            } 
         } /* END CATCH ALL STYLES */
         @include for-phone-only {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            .project-card--wrapper {
+            a {
                 max-width: 340px;
                 height: auto;
                 margin-bottom: 20px;
             }
+            .project-card--about-wrapper {
+                .project-card--title {
+                    font-size: 1.4em;
+                    margin: 3px 0;
+                }
+                .project-card--details {
+                    font-size: 1.2em;
+                }
+            }
         } 
         @include for-tablet-portrait-up {
             grid-template-columns: repeat(3, 220px);
-            grid-template-rows: 280px;
+            grid-template-rows: 300px;
             grid-gap: 20px;
+            .project-card--about-wrapper {
+                height: 60px;
+                padding-top: 0.75em;
+                .project-card--title {
+                    font-size: 1.4em;
+                }
+                .project-card--details {
+                    font-size: 1.2em;
+                }
+            }
         } 
         @include for-tablet-landscape-up {
             grid-template-columns: repeat(3, 340px);
             grid-template-rows: 400px;
             grid-gap: 20px;
+            .project-card--about-wrapper {
+                height: 60px;
+                .project-card--title {
+                    font-size: 1.6em;
+                }
+                .project-card--details {
+                    font-size: 1.4em;
+                }
+            }
         } 
         @include for-desktop-up {
             grid-template-columns: repeat(4, 340px);
@@ -199,6 +224,15 @@ main {
             grid-template-columns: repeat(4, 400px);
             grid-template-rows: 460px;
             grid-gap: 20px;
+            .project-card--about-wrapper {
+                padding-top: 1em;
+                .project-card--title {
+                    font-size: 1.6em;
+                }
+                .project-card--details {
+                    font-size: 1.4em;
+                }
+            }
         } 
     }
 
@@ -307,8 +341,8 @@ main {
             display: none;
         }
         .project-panel--card:hover {
-            transition: all 0.5s ease-in;
-            transform: scale(1.3334);
+            transition: transform 0.35s ease-in;
+            transform: scale(1.3334) translateY(-12.5%);
         }
         @include for-tablet-landscape-up {
             .project-panel--card {
@@ -452,9 +486,6 @@ main {
             }
             .about-body {
                 min-width: 940px;
-                // .about-body--text {
-                //     font-size: 1.8em;
-                // }
             }
         }
         @include for-big-desktop-up {

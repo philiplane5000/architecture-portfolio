@@ -505,16 +505,109 @@ main {
         }
     }
 
-    .form-container {
-        width: 250px;
-        #newProjectForm {
+    .admin-container {
+        display: flex;
+        form {
+            font-family: $primary-font;
+            border: 1px solid gray;
+            display: grid;
+            width: 1160px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(4, auto);
+            grid-gap: 20px;
+
+        }
+        .about {
             display: flex;
             flex-direction: column;
-            input, label {
-                padding: 10px;
-            }
+            justify-content: flex-start;
+            align-items: baseline;
+            padding: 0 10px;
+        }
+        .headers, .images, .details {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: baseline;
+            padding: 0 10px;
+        }
+        .headers {
+            grid-column-start: 1;
+            grid-column-end: 7;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        .about {
+            grid-column-start: 7;
+            grid-column-end: -1;
+            grid-row-start: 1;
+            grid-row-end: 4;
+        }
+        .images {
+            grid-column-start: 1;
+            grid-column-end: 7;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        .details {
+            grid-column-start: 1;
+            grid-column-end: 7;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+        button {
+            grid-column: 1 / -1;
+            grid-row: 4 / -1;
+            cursor: pointer;
+            width: 245px;
+            height: 45px;
+            border-radius: 5px;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            background-color: rgb(36, 116, 221);
+            color: #fff;
+            font-size: 1.8em;
+            border: none;
+        }
+        button:active {
+            background-color: rgb(255,25,50);
+        }
+        h4 {
+            font-size: 2.6em;
+            margin: 20px 0;
+            // text-transform: uppercase;
+            letter-spacing: 0.75px;
+        }
+        .form-item {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .form-item label {
+            font-size: 1.8em;
+            letter-spacing: 0.75px;
+        }
+        .form-item input, .form-item textarea {
+            font-family: $primary-font;
+            font-size: 1.8em;
+            margin-top: 12.5px;
+            padding: 4px;
+            border: 3px solid #cccccc;
+        }
+        .form-item input {
+            width: 100%;
+            height: 50px;
+            font-family: Tahoma, sans-serif;
+            font-size: 2em;
+        }
+        .form-item textarea {
+            width: 100%;
+            height: 250px;
         }
     }
+
 }
 
 footer {

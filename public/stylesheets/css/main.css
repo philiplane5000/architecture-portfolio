@@ -537,15 +537,105 @@ main .about-container .about-body .about-body--text .contact {
     font-size: 1.8em;
   }
 }
-main .form-container {
-  width: 250px;
+main .admin-container {
+  display: flex;
 }
-main .form-container #newProjectForm {
+main .admin-container form {
+  font-family: "Open Sans", sans-serif;
+  border: 1px solid gray;
+  display: grid;
+  width: 1160px;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(4, auto);
+  grid-gap: 20px;
+}
+main .admin-container .about {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: baseline;
+  padding: 0 10px;
 }
-main .form-container #newProjectForm input, main .form-container #newProjectForm label {
-  padding: 10px;
+main .admin-container .headers, main .admin-container .images, main .admin-container .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: baseline;
+  padding: 0 10px;
+}
+main .admin-container .headers {
+  grid-column-start: 1;
+  grid-column-end: 7;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+main .admin-container .about {
+  grid-column-start: 7;
+  grid-column-end: -1;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+main .admin-container .images {
+  grid-column-start: 1;
+  grid-column-end: 7;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+main .admin-container .details {
+  grid-column-start: 1;
+  grid-column-end: 7;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+main .admin-container button {
+  grid-column: 1/-1;
+  grid-row: 4/-1;
+  cursor: pointer;
+  width: 245px;
+  height: 45px;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  background-color: #2474dd;
+  color: #fff;
+  font-size: 1.8em;
+  border: none;
+}
+main .admin-container button:active {
+  background-color: #ff1932;
+}
+main .admin-container h4 {
+  font-size: 2.6em;
+  margin: 20px 0;
+  letter-spacing: 0.75px;
+}
+main .admin-container .form-item {
+  width: 100%;
+  margin: 10px 0;
+}
+main .admin-container .form-item label {
+  font-size: 1.8em;
+  letter-spacing: 0.75px;
+}
+main .admin-container .form-item input, main .admin-container .form-item textarea {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.8em;
+  margin-top: 12.5px;
+  padding: 4px;
+  border: 3px solid #cccccc;
+}
+main .admin-container .form-item input {
+  width: 100%;
+  height: 50px;
+  font-family: Tahoma, sans-serif;
+  font-size: 2em;
+}
+main .admin-container .form-item textarea {
+  width: 100%;
+  height: 250px;
 }
 
 footer {

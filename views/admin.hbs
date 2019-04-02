@@ -1,65 +1,100 @@
 {{> nav }}
 
 <main>
-
-    <section class="content-container">
-
-        <div class="admin-container">
-
-            <div class="form-container">
-                <form id="newProjectForm">
-                    
-                    <label for="project-name">Project Name:</label>
-                    <input type="text" name="project-name">
-                    <label for="project-id">Project ID:</label>
-                    <input type="text" name="project-id">
-                    <label for="project-location">Project Location:</label>
-                    <input type="text" name="project-location">
-                    <label for="project-class">Project Class:</label>
-                    <input type="text" name="project-class">
-
-                    <label for="Cover Image">Cover Image: [SQUARE]</label>
-                    <input type="text" name="cover-image">
-                    <label for="image01">Image01: [SLIDE 1]</label>
-                    <input type="text" name="image01">
-                    <label for="image02">Image02: [SLIDE 2]</label>
-                    <input type="text" name="image02">
-                    <label for="image03">Image03:[SLIDE 3]</label>
-                    <input type="text" name="image03">
-                    <label for="image04">Image04:[SLIDE 4]</label>
-                    <input type="text" name="image04">
-
-                    <label for="about01">About01:</label>
-                    <textarea type="text" name="about01"></textarea>
-                    <label for="about02">About02:</label>
-                    <textarea type="text" name="about02"></textarea>
-                    <label for="about03">About03:</label>
-                    <textarea type="text" name="about03"></textarea>
-                    <label for="about04">About04:</label>
-                    <textarea type="text" name="about04"></textarea>
-                    <label for="about05">About05:</label>
-                    <textarea type="text" name="about05"></textarea>
-
-                    <label for="details01">Details01</label>
-                    <input type="text" name="details01">
-                    <label for="details02">Details02</label>
-                    <input type="text" name="details02">
-                    <label for="details03">Details03</label>
-                    <input type="text" name="details03">
-                    <label for="details04">Details04</label>
-                    <input type="text" name="details04">
-
-                    <button type="submit" id="submitNewProject">SUBMIT</button>
-                    <br>
-                    <button type="submit" id="deleteProject">DELETE</button>
-                </form>
+    <div class="admin-container">
+        <form>
+            <div class="headers">
+                <h4>Project Summary</h4>
+                <div class="form-item">
+                    <label for="project-name">Title</label>
+                    <input type="text" name="project-name" placeholder="Somerleyton Road">
+                </div>
+                <div class="form-item">
+                    <label for="project-id">ID</label>
+                    <input type="text" name="project-id" placeholder="somerleyton-road">
+                </div>
+                <div class="form-item">
+                    <label for="project-location">Location</label>
+                    <input type="text" name="project-location" placeholder="London, UK">
+                </div>
+                <div class="form-item">
+                    <label for="project-class">Class / Category</label>
+                    <input type="text" name="project-class" placeholder="Metropolitan Workshop">
+                </div>
             </div>
 
+            <div class="about">
+                <h4>About Paragraphs</h4>
+                <div class="form-item">
+                    <label for="about01">Paragraph 1</label>
+                    <textarea type="text" name="about01"></textarea>
+                </div>
+                <div class="form-item">
+                    <label for="about02">Paragraph 2</label>
+                    <textarea type="text" name="about02"></textarea>
+                </div>
+                <div class="form-item">
+                    <label for="about03">Paragraph 3</label>
+                    <textarea type="text" name="about03"></textarea>
+                </div>
+                <div class="form-item">
+                    <label for="about04">Paragraph 4</label>
+                    <textarea type="text" name="about04"></textarea>
+                </div>
+                <div class="form-item">
+                    <label for="about05">Paragraph 5</label>
+                    <textarea type="text" name="about05"></textarea>
+                </div>
+            </div>
 
-        </div>
+            <div class="images">
+                <h4>Images</h4>
+                <div class="form-item">
+                    <label for="Cover Image">Cover Image &nbsp;&nbsp; (1:1)</label>
+                    <input type="text" name="cover-image">
+                </div>
+                <div class="form-item">
+                    <label for="image01">Slide 1 &nbsp;&nbsp; (3:2)</label>
+                    <input type="text" name="image01">
+                </div>
+                <div class="form-item">
+                    <label for="image02">Slide 2 &nbsp;&nbsp; (3:2)</label>
+                    <input type="text" name="image02">
+                </div>
+                <div class="form-item">
+                    <label for="image03">Slide 3 &nbsp;&nbsp; (3:2)</label>
+                    <input type="text" name="image03">
+                </div>
+                <div class="form-item">
+                    <label for="image04">Slide 4 &nbsp;&nbsp; (3:2)</label>
+                    <input type="text" name="image04">
+                </div>
+            </div>
 
-    </section>
+            <div class="details">
+                <h4>Details</h4>
+                <div class="form-item">
+                    <label for="details01">Detail 1</label>
+                    <input type="text" name="details01">
+                </div>
+                <div class="form-item">
+                    <label for="details02">Detail 2</label>
+                    <input type="text" name="details02">
+                </div>
+                <div class="form-item">
+                    <label for="details03">Detail 3</label>
+                    <input type="text" name="details03">
+                </div>
+                <div class="form-item">
+                    <label for="details04">Detail 4</label>
+                    <input type="text" name="details04">
+                </div>
+            </div>
 
+            <button type="submit" id="submitNewProject">SUBMIT</button>
+            {{!-- <button type="submit" id="deleteProject">DELETE</button> --}}
+        </form>
+    </div>
 </main>
 
 {{> footer}}

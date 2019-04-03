@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(e) { 
     //BEGIN SCRIPT//
     const projectNameInput = document.querySelector("[name='project-name']");
-    const projectIdInput = document.querySelector("[name='project-id']");
+    const projectId = document.querySelector("[name='project-id']");
     const projectLocation = document.querySelector("[name='project-location']");
     const projectClass = document.querySelector("[name='project-class']");
 
@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
     const details03 = document.querySelector("[name='details03']");
     const details04 = document.querySelector("[name='details04']");
 
+    const deleteId = document.querySelector("[name='delete-id']");
+
     const submitBtn = document.querySelector("#submitNewProject");
     const deleteProjectBtn = document.querySelector("#deleteProject");
 
@@ -31,34 +33,52 @@ document.addEventListener("DOMContentLoaded", function(e) {
         console.log('***** NEW PROJECT *****')
         console.log(newProject)
         console.log('***********************')
-        axios.post('/api', newProject)
-        .then(res => {
-            console.log(res)
-        })
-        .catch(err => {
-            console.log(err)
-        })
-    })
-    
-    deleteProjectBtn.addEventListener('click', function(e) {
-        e.preventDefault()
-        let projectId = projectIdInput.value;
-        console.log('***** PROJECT-ID *****')
-        console.log(projectId);
-        console.log('***********************')
-        axios.delete(`/api/${projectId}`)
+        postProject(newProject)
             .then(res => {
-                console.log(res.data.status)
+                handleResponse(res)
             })
             .catch(err => {
                 console.log(err)
             })
     })
+    
+    deleteProjectBtn.addEventListener('click', function(e) {
+        e.preventDefault()
+        logData(deleteId.value);
+
+        if(deleteId.value < 1) {
+            alert('"Project ID" field is empty!');
+            return
+        }
+
+        deleteProject(deleteId.value)            
+            .then(res => {
+                handleResponse(res)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        // axios.delete(`/api/${deleteId.value}`)
+    })
+
+    function postProject(project) {
+        return axios.post('/api', project)
+    }
+
+    function deleteProject(id) {
+        return axios.delete(`/api/${id}`)
+    }
+
+    function handleResponse(res) {
+        (res.status === 200) ? window.location = "/projects" : alert('SOMETHING WENT WRONG!')
+    }
+
+    function logData(data) {
+        console.log(`******// ${data} //******`)
+    }
 
     function buildProjectObj() {
-
         let imageArray, aboutArray, detailsArray;
-
         imageArray = [];
         if(image01.value.length > 0) {
             imageArray.push({imgSrc: image01.value})
@@ -72,7 +92,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
         if(image04.value.length > 0) {
             imageArray.push({imgSrc: image04.value})
         }
-
         aboutArray = [];
         if(about01.value.length > 0) {
             aboutArray.push({paragraph: about01.value})
@@ -89,7 +108,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
         if(about05.value.length > 0) {
             aboutArray.push({paragraph: about05.value})
         }
-
         detailsArray = [];
         if(details01.value.length > 0) {
             detailsArray.push({detail: details01.value})
@@ -103,22 +121,16 @@ document.addEventListener("DOMContentLoaded", function(e) {
         if(details04.value.length > 0) {
             detailsArray.push({detail: details04.value})
         }
-
         return {
             name: projectNameInput.value,
             coverImage: coverImageInput.value,
-            id: projectIdInput.value,
+            id: projectId.value,
             location: projectLocation.value,
             class: projectClass.value,
             images: imageArray,
             about: aboutArray,
             details: detailsArray,
         }
-    }
-
-    function deleteProject(id) {
-        axios.delete(`/api/${id}`)
-
     }
     //END SCRIPT //
   });

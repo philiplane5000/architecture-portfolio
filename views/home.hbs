@@ -1,14 +1,11 @@
 {{> nav }}
 
 <main>
-
         <div class="project-cards-outer-container">
-            
             {{#each projects}}
-            <a href="/project/{{_id}}" id={{id}}>
-                {{!-- <div class="project-card--wrapper"> --}}
-                    <div class="project-card--image-wrapper">
-                        <img src={{coverImage}} class="project-card--image">
+            <a href="/project/{{_id}}" id={{id}} class="project-card">
+                    <div>
+                        <img src={{coverImage}} alt={{id}}>
                     </div>
                     <div class="project-card--about-wrapper">
                         <div class="project-card--title">
@@ -18,12 +15,9 @@
                             {{location}} | {{class}}
                         </div>
                     </div>
-                {{!-- </div> --}}
             </a>
             {{/each}}
-
         </div>
-
 </main>
 
 {{> footer}}

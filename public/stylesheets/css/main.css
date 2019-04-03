@@ -58,33 +58,73 @@ body {
   }
 }
 
+/* HEADER CONTAINS PAGE HEADER AND NAVBAR */
 header {
+  /* HEADER SPECIFIC CATCH ALL STYLES */
   font-family: "arconregular", "Open Sans", sans-serif;
   display: flex;
   flex-wrap: nowrap;
   align-items: baseline;
   padding: 60px 0 20px 0;
-}
-@media (max-width: 639px) {
-  header {
-    flex-wrap: wrap;
-  }
+  /* END HEADER SPECIFIC CATCH ALL STYLES */
 }
 header h1 {
   font-size: 4em;
   margin-right: 20px;
 }
+header nav {
+  display: flex;
+}
+header nav ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+header nav ul li {
+  margin: 0 15px;
+  font-size: 2.2em;
+}
+header nav ul li a {
+  color: #0C0500;
+  text-decoration: none;
+  letter-spacing: 0.0275cm;
+}
+header nav ul li a:visited {
+  color: #0C0500;
+}
+header nav ul li a:focus, header nav ul li a:hover {
+  opacity: 1;
+}
+header nav ul li:first-child {
+  margin-left: 0;
+}
 @media (max-width: 639px) {
+  header {
+    flex-wrap: wrap;
+  }
   header h1 {
     text-align: center;
     min-width: 340px;
     margin: 0 auto;
+  }
+  header nav {
+    min-width: 340px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  header nav ul {
+    padding-top: 15px;
   }
 }
 @media (min-width: 640px) {
   header h1 {
     min-width: 340px;
     margin-right: 20px;
+  }
+  header nav {
+    min-width: 340px;
   }
 }
 @media (min-width: 1040px) {
@@ -92,11 +132,17 @@ header h1 {
     min-width: 700px;
     margin-right: 20px;
   }
+  header nav {
+    min-width: 340px;
+  }
 }
 @media (min-width: 1440px) {
   header h1 {
     min-width: 940px;
     margin-right: 20px;
+  }
+  header nav {
+    min-width: 460px;
   }
 }
 @media (min-width: 1800px) {
@@ -104,85 +150,24 @@ header h1 {
     min-width: 1100px;
     margin-right: 20px;
   }
-}
-header nav {
-  display: flex;
-}
-@media (max-width: 639px) {
-  header nav {
-    min-width: 340px;
-    margin: 0 auto;
-    justify-content: center;
-  }
-}
-@media (min-width: 640px) {
-  header nav {
-    min-width: 340px;
-  }
-}
-@media (min-width: 1040px) {
-  header nav {
-    min-width: 340px;
-  }
-}
-@media (min-width: 1440px) {
-  header nav {
-    min-width: 460px;
-  }
-}
-@media (min-width: 1800px) {
   header nav {
     min-width: 540px;
   }
 }
-header nav .navbar {
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-@media (max-width: 639px) {
-  header nav .navbar {
-    padding-top: 15px;
-  }
-}
-header nav .navbar li {
-  margin: 0 15px;
-  font-size: 2.2em;
-}
-header nav .navbar li a {
-  color: #0c0500;
-  text-decoration: none;
-  letter-spacing: 0.0325cm;
-}
-header nav .navbar li a:visited {
-  color: #0c0500;
-}
-header nav .navbar li a:focus, header nav .navbar li a:hover {
-  opacity: 1;
-  border-bottom: 2px solid #0c0500;
-}
-header nav .navbar li:first-child {
-  margin-left: 0;
-}
 
 main {
   margin: 40px 0;
-}
-@media (max-width: 639px) {
-  main {
-    margin: 40px 0 20px 0;
-  }
+  /* (!) HOME PAGE PROJECT CARDS STYLES (NOT INDIVIDUAL PROJECT PAGE) (!) */
+  /* END PAGE SPECIFIC CATCH ALL STYLES */
+  /*(!) INDIVIDUAL PROJECT PAGE STYLES (NOT HOME-PAGE PROJECT CARDS STYLES) (!) */
 }
 main .project-cards-outer-container {
-  /* CATCH ALL STYLES */
+  /* PAGE SPECIFIC CATCH ALL STYLES */
   display: grid;
-  /* END CATCH ALL STYLES */
 }
-main .project-cards-outer-container a {
+main .project-cards-outer-container a.project-card {
   cursor: pointer;
-  color: #0c0500;
+  color: #0C0500;
   text-decoration: none;
 }
 main .project-cards-outer-container .project-card--about-wrapper {
@@ -204,16 +189,16 @@ main .project-cards-outer-container .project-card--about-wrapper .project-card--
     justify-content: center;
     align-items: center;
   }
-  main .project-cards-outer-container a {
+  main a.project-card {
     max-width: 340px;
     height: auto;
     margin-bottom: 20px;
   }
-  main .project-cards-outer-container .project-card--about-wrapper .project-card--title {
+  main .project-card--about-wrapper .project-card--title {
     font-size: 1.4em;
     margin: 3px 0;
   }
-  main .project-cards-outer-container .project-card--about-wrapper .project-card--details {
+  main .project-card--about-wrapper .project-card--details {
     font-size: 1.2em;
   }
 }
@@ -223,14 +208,14 @@ main .project-cards-outer-container .project-card--about-wrapper .project-card--
     grid-template-rows: 300px;
     grid-gap: 20px;
   }
-  main .project-cards-outer-container .project-card--about-wrapper {
+  main .project-card--about-wrapper {
     height: 60px;
     padding-top: 0.75em;
   }
-  main .project-cards-outer-container .project-card--about-wrapper .project-card--title {
+  main .project-card--about-wrapper .project-card--title {
     font-size: 1.4em;
   }
-  main .project-cards-outer-container .project-card--about-wrapper .project-card--details {
+  main .project-card--about-wrapper .project-card--details {
     font-size: 1.2em;
   }
 }
@@ -240,13 +225,13 @@ main .project-cards-outer-container .project-card--about-wrapper .project-card--
     grid-template-rows: 400px;
     grid-gap: 20px;
   }
-  main .project-cards-outer-container .project-card--about-wrapper {
+  main .project-card--about-wrapper {
     height: 60px;
   }
-  main .project-cards-outer-container .project-card--about-wrapper .project-card--title {
+  main .project-card--about-wrapper .project-card--title {
     font-size: 1.6em;
   }
-  main .project-cards-outer-container .project-card--about-wrapper .project-card--details {
+  main .project-card--about-wrapper .project-card--details {
     font-size: 1.4em;
   }
 }
@@ -263,40 +248,43 @@ main .project-cards-outer-container .project-card--about-wrapper .project-card--
     grid-template-rows: 460px;
     grid-gap: 20px;
   }
-  main .project-cards-outer-container .project-card--about-wrapper {
+  main .project-card--about-wrapper {
     padding-top: 1em;
   }
-  main .project-cards-outer-container .project-card--about-wrapper .project-card--title {
+  main .project-card--about-wrapper .project-card--title {
     font-size: 1.6em;
   }
-  main .project-cards-outer-container .project-card--about-wrapper .project-card--details {
+  main .project-card--about-wrapper .project-card--details {
     font-size: 1.4em;
   }
 }
 main .project-container {
-  /* CATCH ALL STYLES */
+  /* COMPONENT SPECIFIC CATCH ALL STYLES */
   display: flex;
-  /* END CATCH ALL STYLES */
+  /* COMPONENT SPECIFIC CATCH ALL STYLES */
 }
 main .project-container .project-desc-container {
   display: flex;
   flex-direction: column;
   align-items: baseline;
+  font-family: "Source Serif Pro", serif;
 }
 main .project-container .project-desc-container .project-desc--name {
   font-size: 2.4em;
   font-weight: 500;
+  color: #0C0500;
   text-decoration: underline;
   padding-bottom: 30px;
 }
 main .project-container .project-desc-container .project-desc--about p {
   padding-bottom: 20px;
   line-height: 1.5em;
-  font-family: "Source Serif Pro", serif;
   font-size: 1.4em;
+  color: #0C0500;
 }
-main .project-container .project-desc-container .project-desc--about .detail {
+main .project-container .project-desc-container .project-desc--about p.detail {
   padding: 0;
+  color: gray;
 }
 @media (max-width: 639px) {
   main .project-container {
@@ -388,7 +376,7 @@ main .project-panel-container .project-panel--card:hover {
     display: block;
     cursor: pointer;
     width: 340px;
-    height: 226px;
+    height: 226.67px;
     background-size: contain;
   }
   main .project-panel-container div:last-of-type {
@@ -422,10 +410,10 @@ main .bottom-nav a:visited {
   color: black;
 }
 main .bottom-nav a:hover {
-  color: #ff1932;
+  color: #FF1932;
 }
 main .bottom-nav a:active {
-  color: #ff1932;
+  color: #FF1932;
 }
 @media (min-width: 1040px) {
   main .bottom-nav a {
@@ -433,10 +421,10 @@ main .bottom-nav a:active {
   }
 }
 main .about-container {
-  /*CATCH ALL STYLES*/
+  /*PAGE SPECIFIC CATCH ALL STYLES*/
   display: flex;
   flex-direction: row;
-  /*END CATCH ALL STYLES*/
+  /*END PAGE SPECIFIC CATCH ALL STYLES*/
 }
 main .about-container .profile-pic-container {
   display: flex;
@@ -546,6 +534,7 @@ main .about-container .about-body .about-body--text .contact {
   }
 }
 main .admin-container {
+  /* NOT CLIENT FACING (DESKTOP VIEW ONLY) */
   display: flex;
   flex-direction: column;
   justify-content: center;

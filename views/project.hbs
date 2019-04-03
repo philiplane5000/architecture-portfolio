@@ -5,6 +5,7 @@
     <div class="project-container">
 
         <section class="project-media-container">
+            {{!-- UiKit Slideshow Component --}}
             <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="ratio: 3:2">
                 <ul class="uk-slideshow-items">
                     {{#each project.images}}
@@ -18,6 +19,7 @@
                 <a class="uk-position-center-right uk-position-small" href="#" uk-slidenav-next
                     uk-slideshow-item="next"></a>
             </div>
+            {{!-- UiKit Slideshow Component --}}
         </section>
 
         <section class="project-desc-container">
@@ -27,7 +29,7 @@
                 {{#each project.about}}
                 <p>{{paragraph}}</p>
                 {{/each}}
-
+                <br><br>
                 {{#each project.details}}
                 <p class="detail">{{detail}}</p>
                 {{/each}}

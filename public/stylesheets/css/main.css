@@ -96,6 +96,7 @@ header nav ul li a:visited {
 }
 header nav ul li a:focus, header nav ul li a:hover {
   opacity: 1;
+  color: #0C0500;
 }
 header nav ul li:first-child {
   margin-left: 0;

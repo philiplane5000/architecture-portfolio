@@ -3,7 +3,7 @@ const env = process.env.NODE_ENV // 'dev' or 'test'
 
 const dev = {
     app: {
-        port: 8080
+        port: process.env.PORT || 8080
     },
     db: {
         host: 'localhost',
@@ -14,11 +14,11 @@ const dev = {
 
 const prod = {
     app: {
-        port: 8080 /* figure out from Now.sh */
+        port: process.env.PORT || 8080
     },
     db: {
         host: process.env.DB_PROD_HOST,
-        port: 27017,
+        port: process.env.DB_PROD_PORT,
         username: process.env.DB_PROD_USER,
         password: process.env.DB_PROD_PASS,
         name: process.env.DB_PROD_NAME

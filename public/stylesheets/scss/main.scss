@@ -99,6 +99,7 @@ header { /* HEADER SPECIFIC CATCH ALL STYLES */
                 }
                 a:focus, a:hover {
                     opacity: 1;
+                    color: $black;
                 }
             }
             li:first-child {

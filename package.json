@@ -9,7 +9,7 @@
     "dev": "concurrently --kill-others \"npm run nm-watch \" \"npm run sass-watch\""
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "body-parser": "^1.18.3",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
